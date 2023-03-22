@@ -31,6 +31,7 @@ const sidebars = {
         'working-with-serverless-api/Introdusing-to-module',
         'working-with-serverless-api/Introduction-to-Azure-Functions',
         'working-with-serverless-api/work-with-core-tools',
+        'working-with-serverless-api/serverless-framework',
         'working-with-serverless-api/task'
       ]
     }
