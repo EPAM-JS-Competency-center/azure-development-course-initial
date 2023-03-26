@@ -1,8 +1,8 @@
 ---
-sidebar_position: 4
+sidebar_position: 7
 ---
 
-# HomeWork
+# Task
 
 This task focuses on integration of Function App with Cosmos DB.
 
