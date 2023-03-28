@@ -1,0 +1,8 @@
+{
+  "label": "0. Creating Azure Account",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Let's create an Azure Account"
+  }
+}
