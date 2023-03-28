@@ -35,3 +35,6 @@ Testing this functions is very easy - simply call them using the provided local 
 6. Before publishing your local application, you need to create it (with the same name as your local) in your Azure subscription. This can be done directly from your account or using the `Azure functions` extension for VSCode. We recommend doing this through the extension because when creating the application, it will guide you step by step through all the necessary stages and create all the necessary additional services, such as a `Storage account`, which is used by Azure Functions to manage triggers, inputs, and outputs for your functions.
 
 6. When all previous steps are done, run the command `func azure functionapp publish <FunctionAppName>`. That's it! When the process is over, you may see your functions inside your function app in Azure subscription.
+
+#### Useful meterials:
+ - [Work with Azure Functions Core Tools](https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local)
