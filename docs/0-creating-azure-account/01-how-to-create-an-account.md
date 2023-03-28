@@ -6,14 +6,14 @@ sidebar_position: 1
 
 
 1. First go to [Azure Portal](https://azure.microsoft.com/en-us/) and hit the sign in button in the top right corner.
-2. Use EPAM email to login.
+2. Use EPAM email (or personal) to login.
 3. When you login you should see the portal.
 ![img.png](assets/portal-starter.png)
 4. Click the blue "Start" button under "Start with an Azure free trial". (You can read more [here](https://azure.microsoft.com/en-us/free/))
 ![img.png](assets/start-free.png)
 5. Then click onto "Start free" button on the page.
-6. It may prompt you to login, use your EPAM credentials again.
-7. Fill in the information required in the form with your personal information. Enter EPAM email. Omit the VatID.
+6. It may prompt you to login, use your EPAM credentials (or personal) again.
+7. Fill in the information required in the form with your personal information. Enter EPAM email (or personal). Omit the VatID.
 ![img_1.png](assets/form.png)
 8. Hit Sign up button! Wait for the form to process your information and you should be redirected to the following page.
 ![img_2.png](assets/you-are-ready.png)
