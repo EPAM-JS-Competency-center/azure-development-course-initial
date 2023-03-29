@@ -30,6 +30,23 @@ Premium performance storage accounts use solid-state drives (SSDs).
 3. Premium file shares (Azure Files; LRS, ZRS)
 4. Premium page blobs (Page blobs; LRS)
 
+## Storage account Access Tiers:
+
+**Hot**
+Data that is in active use or predicted to be accessed often, in detail, the data that is read from and written to often.
+Data that is staged for processing and in eventual migration to the cool access tier come under hot access tiers.
+
+**Cool**
+Short-term backup and disaster recovery datasets
+Older media content that is not viewed regularly anymore but is expected to be easily available when accessed
+Large data sets which must be stored cost-effectively when more data is being collected for future processing. For example, long-term storage of scientific data or raw telemetry data from a manufacturing firm
+
+**Archive**
+Data must sustain in the archive tier for at least 180 days or will be subjected to an early deletion charge.
+Long-term backup, secondary backup, and archival datasets
+The preservation of original raw data even after processing it into the final usable form
+Long-time storage of compliance and archival data, which is hardly ever accessed
+
 ## Storage Account Queues
 Azure Queue storage is an Azure service that implements cloud-based queues. 
 Each queue maintains an inventory of messages. 
