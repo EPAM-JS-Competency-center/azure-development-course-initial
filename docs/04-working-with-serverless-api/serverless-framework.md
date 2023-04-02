@@ -35,7 +35,7 @@ Also, similarly to the previous section, we will continue to use TypeScript as t
 5. The next logical step after testing our application locally would be to deploy it to the Azure account we created. To do this, we use the command `sls deploy`. However, before we can do that, we need to authenticate to our Azure account using the Azure CLI:
 
 - Type `az login` in the terminal to authenticate. 
-- After you've authenticated in your browser, the next command you'll need to enter is `az account set -s <subscription-id>`, where you'll need to substitute your own subscription ID instead of `subscription-id`. Finding your subscription ID is easy - on the main Microsoft Azure screen, open the Subscriptions service. In the window that opens, you will see a list of all your subscriptions with their related id's. If you don't have a created subscription, you can create one right here, in this window.
+- After you've authenticated in your browser, the next command you'll need to enter is `az account set -s <subscription-id>`, where you'll need to substitute your own subscription ID instead of `subscription-id`. Finding your subscription ID is easy - on the main Microsoft Azure screen, open the Subscriptions service. ![img.png](assets/func_from_browser.png) In the window that opens, you will see a list of all your subscriptions with their related id's. If you don't have a created subscription, you can create one right here, in this window. ![img.png](assets/subscription_id.png)
 - The next step is to generate a service principal for your Azure subscription. This can be done using the command "az ad sp create-for-rbac --name 'my-unique-name'", where 'my-unique-name' is a name of your choice. This will yield something like:
   ```
   {
@@ -62,7 +62,7 @@ Also, similarly to the previous section, we will continue to use TypeScript as t
   
   ---
   __Note:__
-  Usually, the steps described above are enough for a successful deployment of your application to your Azure account. However, in some cases, when running the `sls deploy` command, you may encounter an error indicating that you do not have editing rights to the resource group. In such a case, you will need to create it by yourself (or use an existing one) in your Azure account (by default, you will have owner rights to it) and add its name to the serverless.yml file into _provider_ -> _resourceGroup_ section.
+  Usually, the steps described above are enough for a successful deployment of your application to your Azure account. However, in some cases, when running the `sls deploy` command, you may encounter an error indicating that you do not have editing rights to the resource group. In such a case, you will need to create it by yourself (or use an existing one) in your Azure account (by default, you will have owner rights to it) and add its name to the serverless.yml file into _provider_ -> _resourceGroup_ section. ![img.png](assets/resource_groups.png) ![img.png](assets/resource_group_name.png)
 
   ---
 

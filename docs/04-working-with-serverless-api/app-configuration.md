@@ -14,21 +14,22 @@ App Configuration is a tool that allows you to store all your application settin
 
 Let's now follow step-by step on the process of creating the App configuration service:
 
-1. Choose the App Configuration Service from services list.
-2. Select add button in the upper left corner of toolbar.
+1. Choose the App Configuration Service from services list. ![img.png](assets/app_config/app_config.png)
+2. Select add button in the upper left corner of toolbar. ![img.png](assets/app_config/app_config_create.png)
 3. In next pane you will need to set the following settings:
     - __Subscription__ - Choose a subscription, under which your Azure functions app is registered. 
     - __Resource group__ - Select or create a resource group for your App Configuration store resource.
     - __Resource name__ - Set unique, human-like name for your App cofiguration service.  
     - __Location__ - Choose a proper service physiscal location for your location. It's a good practice to choose the same location as your other components, in our case - Azure functions. 
     - __Pricing tier__ - Select the desired pricing tier.
-4. When all neccesary configurations are set, push the `Review + create` button to validate your settings.
+4. When all neccesary configurations are set, push the `Review + create` button to validate your settings. ![img.png](assets/app_config/app_config_setting.png)
 5. Select `Create`. The deployment process will then start. It might take a few minutes.
----
-__Note:__
-When the process will be finished, check the `Access keys` setting in `Settings` section of your newly-created service. Pay attention to the `Connection string` line. This string contains all neccesary data to perform a connection with this service from other resources. You will need it later to connect to this service from your Function app.  
 
----
+    ---
+    __Note:__
+    When the process will be finished, check the `Access keys` setting in `Settings` section of your newly-created service. Pay attention to the `Connection string` line. This string contains all neccesary data to perform a connection with this service from other resources. You will need it later to connect to this service from your Function app. ![img.png](assets/app_config/connection_string.png)
+
+    ---
 6. Now, when we have App configuration service instance we could create key-value pairs there by entering `Configuration explorer` in `Operations` tab and clicking `Create` button in upper left corner of the window. As our next step let's learn how to connect to App configuration service from Azure functions.
 
 ## Connecting to App configuration service
