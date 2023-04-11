@@ -33,6 +33,7 @@ const sidebars = {
         'working-with-serverless-api/work-with-core-tools',
         'working-with-serverless-api/serverless-framework',
         'working-with-serverless-api/app-configuration',
+        'working-with-serverless-api/API-management',
         'working-with-serverless-api/task'
       ]
     }
