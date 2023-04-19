@@ -7,6 +7,7 @@
 | Node.js	        | 1. https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-nodejs?tabs=managed-identity%2Croles-azure-portal%2Csign-in-azure-cli <br/> 2. https://github.com/Azure/azure-storage-node |
 | ARM Template    | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/queueservices/queues?pivots=deployment-language-arm-template                                                             |
 | Graph Query KQL | https://learn.microsoft.com/en-us/azure/storage/common/resource-graph-samples?tabs=azure-cli                                                                                                                 | 
+| Terraform       | https://registry.terraform.io/providers/hashicorp/azurerm/3.51.0/docs/resources/storage_account                                                                                                              |
 
 ## Storage Account CLI Examples
 Create: <br/>
@@ -30,6 +31,7 @@ az storage account list [--resource-group]
 | PowerShell   | https://learn.microsoft.com/en-us/azure/storage/queues/storage-powershell-how-to-use-queues                                                            |
 | Node.js	     | 1. https://learn.microsoft.com/en-us/azure/storage/queues/storage-nodejs-how-to-use-queues <br/> 2. https://www.npmjs.com/package/@azure/storage-queue |
 | ARM Template | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/queueservices/queues?pivots=deployment-language-arm-template       |
+| Terraform    | https://registry.terraform.io/providers/hashicorp/azurerm/3.51.0/docs/resources/storage_queue                                                          |
 
 ## Storage Account Queue CLI Examples
 Create:
@@ -72,13 +74,14 @@ az storage queue exists --name
 
 ## Storage Account Table API
 
-| Type          | Details                                                                                                                                                                                                                           |
-|---------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| CLI           | https://learn.microsoft.com/en-us/cli/azure/storage/table?view=azure-cli-latest                                                                                                                                                   |
-| PowerShell    | https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-how-to-use-powershell                                                                                                                                        |
-| Node.js	      | 1. https://github.com/uglide/azure-content/blob/master/articles/storage/storage-nodejs-how-to-use-table-storage.md <br/> 2. https://www.npmjs.com/package/@azure/data-tables                                                      |
-| ARM Template  | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/tableservices/tables?pivots=deployment-language-arm-template                                                                                  |
-| KQL           | https://learn.microsoft.com/en-us/azure/storage/common/resource-graph-samples                                                                                                                                                     |
+| Type         | Details                                                                                                                                                                      |
+|--------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| CLI          | https://learn.microsoft.com/en-us/cli/azure/storage/table?view=azure-cli-latest                                                                                              |
+| PowerShell   | https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-how-to-use-powershell                                                                                   |
+| Node.js	     | 1. https://github.com/uglide/azure-content/blob/master/articles/storage/storage-nodejs-how-to-use-table-storage.md <br/> 2. https://www.npmjs.com/package/@azure/data-tables |
+| ARM Template | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/tableservices/tables?pivots=deployment-language-arm-template                             |
+| KQL          | https://learn.microsoft.com/en-us/azure/storage/common/resource-graph-samples                                                                                                |
+| Terraform    | https://registry.terraform.io/providers/hashicorp/azurerm/3.51.0/docs/resources/storage_table                                                                                |
 
 ## Storage Account Table CLI Examples
 Create:
@@ -115,6 +118,57 @@ az storage table exists --name
                         [--table-endpoint]
 </pre>
 
+## Storage Account Table Entity API
+
+| Type       | Details                                                                                                   |
+|------------|-----------------------------------------------------------------------------------------------------------|
+| CLI        | https://learn.microsoft.com/en-us/cli/azure/storage/entity?view=azure-cli-latest                          |
+| PowerShell | https://learn.microsoft.com/en-us/azure/storage/tables/table-storage-how-to-use-powershell                |
+| Node.js	   | https://learn.microsoft.com/en-us/javascript/api/overview/azure/data-tables-readme?view=azure-node-latest |
+| Terraform  | https://registry.terraform.io/providers/hashicorp/azurerm/3.51.0/docs/resources/storage_table_entity      |
+
+## Storage Account Table Entity CLI Examples
+Create:
+<pre>
+az storage entity insert --entity
+                         --table-name
+                         [--account-key]
+                         [--account-name]
+                         [--auth-mode {key, login}]
+                         [--connection-string]
+                         [--if-exists {fail, merge, replace}]
+                         [--sas-token]
+                         [--table-endpoint]
+</pre>
+Remove:
+<pre>
+az storage entity delete --partition-key
+                         --row-key
+                         --table-name
+                         [--account-key]
+                         [--account-name]
+                         [--auth-mode {key, login}]
+                         [--connection-string]
+                         [--if-match]
+                         [--sas-token]
+                         [--table-endpoint]
+</pre>
+
+Query:
+<pre>
+az storage entity query --table-name
+                        [--account-key]
+                        [--account-name]
+                        [--auth-mode {key, login}]
+                        [--connection-string]
+                        [--filter]
+                        [--marker]
+                        [--num-results]
+                        [--sas-token]
+                        [--select]
+                        [--table-endpoint]
+</pre>
+
 ## Storage Account Disk API
 
 | Type         | Details                                                                                                                                          |
@@ -122,6 +176,7 @@ az storage table exists --name
 | CLI          | https://learn.microsoft.com/en-us/cli/azure/disk?view=azure-cli-latest                                                                           |
 | PowerShell   | https://learn.microsoft.com/en-us/azure/virtual-machines/scripts/virtual-machines-powershell-sample-create-managed-disk-from-vhd                 |
 | ARM Template | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/queueservices/queues?pivots=deployment-language-arm-template |
+| Terraform    |                                                                                                                                                  |
 
 ## Storage Account Disk CLI Examples
 Create: <br/>
@@ -145,7 +200,7 @@ az disk show [--ids]
              [--subscription]
 </pre>
 
-## Storage Account Disk API
+## Storage Account File Share API
 
 | Type         | Details                                                                                                                                         |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -153,8 +208,9 @@ az disk show [--ids]
 | PowerShell   | https://learn.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-portal?tabs=azure-powershell                                     |
 | Node.js      | https://www.npmjs.com/package/@azure/storage-file-share                                                                                         |                                                                                                                                                |
 | ARM Template | https://learn.microsoft.com/en-us/azure/templates/microsoft.storage/storageaccounts/fileservices/shares?pivots=deployment-language-arm-template |
+| Terraform    |                                                                                                                                                 |
 
-## Storage Account Disk CLI Examples
+## Storage Account File Share CLI Examples
 Create:
 <pre>
 az storage share create --name
