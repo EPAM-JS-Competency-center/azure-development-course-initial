@@ -34,3 +34,55 @@ If you are not planning to use external encryption key generation, use default o
 Show all previously selected options and attributes
 ![img.png](assets/sa_create_007.png)
 
+# Create Storage Account using Terraform
+
+### Create Resource Group
+<pre>
+/* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group */
+resource "azurerm_resource_group" "rg" {
+  name     = "my-ressource-group"
+  location = "West Europe"
+}
+</pre>
+
+### Create Storage Account
+<pre>
+/* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account */
+resource "azurerm_storage_account" "sa" {
+  name                             = "mystorageaccount"
+  resource_group_name              = azurerm_resource_group.rg.name
+  location                         = azurerm_resource_group.rg.location
+  account_tier                     = "Standard"
+  account_replication_type         = "LRS" /*  GRS, RAGRS, ZRS, GZRS, RAGZRS */
+  access_tier                      = "Cool"
+  enable_https_traffic_only        = true
+  allow_nested_items_to_be_public  = true
+  shared_access_key_enabled        = true
+  public_network_access_enabled    = true
+
+  /* edge_zone = "North Europe" */
+}
+</pre>
+
+### Create Storage Account Container
+<pre>
+/* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container */
+resource "azurerm_storage_container" "sa_container" {
+  name                  = "my-container"
+  storage_account_name  = azurerm_storage_account.sa.name
+  container_access_type = "private"
+}
+</pre>
+
+### Create Storage Account Blob
+<pre>
+/* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_blob */
+resource "azurerm_storage_blob" "sa_blob" {
+  name                   = "my-awesome-content.zip"
+  storage_account_name   = azurerm_storage_account.sa.name
+  storage_container_name = azurerm_storage_container.sa_container.name
+  type                   = "Block"
+  source                 = "myfile.csv"
+  access_tier            = "Cool"
+}
+</pre>
