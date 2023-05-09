@@ -64,3 +64,10 @@ The first line represents the name of the collection from whitch we are retrievi
 After successfully executing the command in the output field, we will see the query result in the form of a table, which can be expanded for convenience: ![img.png](assets/logging/monitor_log_results.png)
 
 In this section of the module we just scratch the surface of some of the key logging concepts and services of Azure such as Azure monitor, logstream, log querying using Kusto Query Language, and visualization of log data.
+
+#### Useful resources
+
+- [Azure Monitor](https://learn.microsoft.com/en-us/azure/azure-monitor/overview)
+- [Kusto Query Language](https://learn.microsoft.com/en-us/azure/data-explorer/kusto/query/)
+- [Azure Log Analytics](https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-analytics-tutorial)
+- [Azure Application Insights](https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview)
