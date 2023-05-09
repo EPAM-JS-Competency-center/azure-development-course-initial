@@ -2,7 +2,7 @@
 
 ## What is API management and why do we need it
 
-In the final part of this module, we will consider another important Azure service - API Management. After we have created, deployed, and configured our application, the last step remaining is to create a minimal interface to make our application's functionality available for interaction with other applications or services. This is where API Management comes in - it serves this and many other purposes.
+In this part of module, we will consider another important Azure service - API Management. After we have created, deployed, and configured our application, the last step remaining is to create a minimal interface to make our application's functionality available for interaction with other applications or services. This is where API Management comes in - it serves this and many other purposes.
 
 API management is a tool that helps to manage and control our APIs more effectively. APIs (Application Programming Interfaces) are like facade to the backend services that allow different software applications to interact and share data with each other.
 
