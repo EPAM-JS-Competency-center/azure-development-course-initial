@@ -20,6 +20,24 @@ Common messaging scenarios:
 5. Transactions: obtain a message from one queue, post results of processing to one or more different queues, move the input message from the original queue.
 6. Message sessions: implement high-scale coordination of workflows and multiplexed transfers that require strict message ordering or message deferral.
 
+## Service Bus tiers
+
+**Premium Tier**<br/>
+Recommended for production scenarios:<br/>
+- High throughput
+- Predictable performance
+- Fixed Pricing
+- Ability to scale workload up and down
+- Large message support
+
+**Standard Tier**<br/>
+Recommended for message based applications in a pay as you go model with variable throughputs and latencies:
+- Variable throughput
+- Variable latency
+- Pay as you go pricing
+- Limited workload scaling
+- Message size upto 256KB
+
 ## Service Bus related resources
 
 1. Servicebus Namespace (base or root entity for all other resources)
