@@ -33,6 +33,8 @@ Common messaging scenarios:
 9. Servicebus Topic Subscription
 10. Servicebus Topic Subscription Rule (Filter)
 
+![SB.jpg](assets/sb_all.jpg)
+
 ## Service Bus Queues
 
 Queues store messages until the receiving application is available to receive and process them.
