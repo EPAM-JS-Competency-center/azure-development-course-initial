@@ -26,6 +26,17 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: '02-serving-spa-in-azure',
+      items: [
+        'serving-spa-in-azure/intro',
+        'serving-spa-in-azure/how-to-serve-spa-in-cloud',
+        'serving-spa-in-azure/azure-services-overview',
+        'serving-spa-in-azure/spa-deployment-overview',
+        'serving-spa-in-azure/cli-overview',
+      ]
+    },
+    {
+      type: 'category',
       label: '04-working-with-serverless-api',
       items: [
         'working-with-serverless-api/Introdusing-to-module',
