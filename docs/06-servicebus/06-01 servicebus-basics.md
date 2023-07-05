@@ -89,3 +89,36 @@ The primary wire protocol for Service Bus is Advanced Messaging Queueing Protoco
 It allows customers to write applications that work against Service Bus and on-premises brokers such as ActiveMQ or RabbitMQ.
 Service Bus Premium is fully compliant with the Java/Jakarta EE Java Message Service (JMS) 2.0 API. 
 Service Bus Standard supports the JMS 1.1 subset focused on queues.
+
+## Service Bus with a Managed Identity
+To use Service Bus triggers with identity-based connections, you will need to add the Azure Service Bus Data Receiver role assignment to the managed identity in your function app. 
+This role is required when using managed identities to trigger off of your service bus namespace. 
+You can also add your own account to this role, which makes it possible to connect to the service bus namespace during local testing.
+<br/>
+
+Role requirements for using identity-based connections vary depending on the service and how you are connecting to it. 
+Needs vary across triggers, input bindings, and output bindings. 
+For more details on specific role requirements, please refer to the trigger and binding documentation for the service.
+
+### Example of configuring roles for Service Bus in portal:
+1. Select Access Control (IAM) is Service Bus.
+2. Click Add and select add role assignment.
+3. Search for Azure Service Bus Data Receiver, select it, and click Next.
+4. On the Members tab, under Assign access to, choose Managed Identity.
+5. Click Select members to open the Select managed identities panel.
+6. In the Managed identity selector, choose Function App from the System-assigned managed identity category. The label "Function App" may have a number in parentheses next to it, indicating the number of apps in the subscription with system-assigned identities.
+7. Your app should appear in a list below the input fields. If you don't see it, you can use the Select box to filter the results with your app's name.
+8. Click on your application. It should move down into the Selected members section. Click Select.
+9. Back on the Add role assignment screen, click Review + assign. Review the configuration, and then click Review + assign.
+10. You've granted your function app access to the service bus namespace using managed identities.
+
+### Example of connecting APP to Service Bus using manged identity in portal:
+1. In the portal, search for desired app.
+2. In app, select Configuration under Settings.
+3. In Application settings, select + New application setting to create the new setting:
+<br/>Name: ServiceBusConnection__fullyQualifiedNamespace
+<br/>Value: <SERVICE_BUS_NAMESPACE>.servicebus.windows.net
+4. After you create the two settings, select Save > Confirm.
+
+When using Azure App Configuration or Key Vault to provide settings for Managed Identity connections, setting names should use a valid key separator such as : or / in place of the __ to ensure names are resolved correctly.
+For example, ServiceBusConnection:fullyQualifiedNamespace.
