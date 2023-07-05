@@ -126,10 +126,23 @@ Azure Blob Storage permits the storage of unstructured data, and it can be acces
 Azure Storage events allow applications to react to events, such as the creation and deletion of blobs.
 Blob storage events are pushed using Azure Event Grid to subscribers such as Azure Functions, Azure Logic Apps, or even to your own http listener.
 
-Portal Example: https://learn.microsoft.com/en-us/azure/event-grid/blob-event-quickstart-portal?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json
+Examples:<br/>
+1. [Portal](https://learn.microsoft.com/en-us/azure/event-grid/blob-event-quickstart-portal?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json)
+2. [PS](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json)
+3. [CLI](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-quickstart?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json)
+4. [Blob Event](https://learn.microsoft.com/en-us/azure/event-grid/event-schema-blob-storage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=event-grid-event-schema)
 
-PS Example: https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-quickstart-powershell?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json
+## Storage Account with managed identity
 
-CLI Example: https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-event-quickstart?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json
+Access to blob data via the Azure portal, PowerShell, or Azure CLI can be authorized either by using the user's Azure AD account or by using the account access keys (Shared Key authorization).
 
-Blob Event Examples: https://learn.microsoft.com/en-us/azure/event-grid/event-schema-blob-storage?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=event-grid-event-schema
+Authorization with Shared Key is not recommended as it may be less secure. 
+For optimal security, disable authorization via Shared Key for your storage account.
+Use of access keys and connection strings should be limited to initial proof of concept apps or development prototypes that don't access production or sensitive data. Otherwise, the token-based authentication classes available in the Azure SDK should always be preferred when authenticating to Azure resources.
+Microsoft recommends that clients use either Azure AD or a shared access signature (SAS) to authorize access to data in Azure Storage. For more information, see Authorize operations for data access.
+
+Links:
+1. [Doc Reference](https://learn.microsoft.com/en-us/azure/storage/blobs/authorize-access-azure-active-directory)
+1. [Permission Types](https://learn.microsoft.com/en-us/rest/api/storageservices/authorize-with-azure-active-directory#permissions-for-calling-data-operations)
+
+
