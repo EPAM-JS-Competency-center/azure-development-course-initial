@@ -1,6 +1,6 @@
 {
   "label": "01. Serving SPA in Azure",
-  "position": 2,
+  "position": 3,
   "link": {
     "type": "generated-index",
     "description": "Module that shows how to serve SPA in Azure"
