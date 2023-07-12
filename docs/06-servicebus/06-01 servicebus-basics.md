@@ -75,6 +75,33 @@ Subscription Rules scenarios:
 
 ![SB.jpg](assets/sb_topic.jpg)
 
+## Service Bus Scaling
+Scaling applies to only the premium tier and allows to add resources to handle increases in load and also save costs by removing resources that are idle.
+Service Bus Premium Messaging provides resource isolation at the CPU and memory level so that each customer workload runs in isolation. 
+This resource container is called a messaging unit.
+For more details please refer [autoscaling tutorial](https://learn.microsoft.com/en-us/azure/service-bus-messaging/automate-update-messaging-units).
+Typical scaling scenarios for Service Bus namespaces:
+- Correlate messaging units with increase resource usage (CPU, Memory, etc.);
+- Correlate messaging units with expected high-load and low-load hours.
+
+## Service Bus dead-letter queue
+The purpose of the dead-letter queue is to hold messages that can't be delivered to any receiver, or messages that couldn't be processed. 
+Messages can then be removed from the DLQ and inspected.
+From an API and protocol perspective, the DLQ is mostly similar to any other queue, except that messages can only be submitted via the dead-letter operation of the parent entity. 
+In addition, time-to-live isn't observed, and you can't dead-letter a message from a DLQ. 
+The dead-letter queue fully supports peek-lock delivery and transactional operations.
+There's no automatic cleanup of the DLQ. Messages remain in the DLQ until you explicitly retrieve them from the DLQ and complete the dead-letter message.
+
+| Dead-letter reason	         | Dead-letter error description                                                    |
+|-----------------------------|----------------------------------------------------------------------------------|
+| HeaderSizeExceeded          | Size exceeding in header section                                                 |
+| TTLExpiredException         | Expiration of TTL Period                                                         |
+| Session ID is null          | Session id should be filled for Session enabled mode                             |
+| MaxTransferHopCountExceeded | Number of forwards exceeded. The deafult value is 4                              |
+| MaxDeliveryCountExceeded    | Couldn't successfully deliver message to handler in specified number of attempts |
+
+For mode details, please refer [official docs](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dead-letter-queues).
+
 ## Service Bus OOB Integrations
 Service Bus has pre-provided integrates with:
 1. [Event Grid](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-to-event-grid-integration-example)
