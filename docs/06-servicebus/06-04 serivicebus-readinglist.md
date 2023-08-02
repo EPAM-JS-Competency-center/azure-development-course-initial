@@ -10,3 +10,4 @@
 8. Tutorials: https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-dotnet-get-started-with-queues?tabs=passwordless
 9. Managed Identity: https://learn.microsoft.com/en-us/azure/stream-analytics/service-bus-managed-identity
 10. Built-in Roles: https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+11. Error Codes: https://learn.microsoft.com/en-us/dotnet/api/microsoft.servicebus.exceptionerrorcodes?view=azure-dotnet
