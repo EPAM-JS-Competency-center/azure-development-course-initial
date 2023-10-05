@@ -1,4 +1,8 @@
-# Working with Serveless framework
+---
+sidebar_position: 3
+---
+
+# Working with Serverless framework
 
 Azure Functions core tools is a great set of tools for efficient and convenient work with Azure Functions. Typically, its functionality covers most needs when developing web applications. However, in some cases, especially in large projects and teams, an additional tool may be needed to effectively develop the application, which would add an additional level of abstraction and thus facilitate communication and understanding of the application's infrastructure between different developers and teams, implementing the principle of Infrastructure as Code (IaC). One popular tool for this purpose in Azure Functions is the Serverless framework.
 The main advantages of this framework over Azure Functions core tools are such:
@@ -9,16 +13,14 @@ The main advantages of this framework over Azure Functions core tools are such:
 - In the long term, an application built on this approach becomes very easy to scale, for example by adding support for more users.
 
 
-
 ## Assumptions
 
-In this module, we will be using the 4th (latest version at the time of the course release) version of the Azure Functions Core Tools package for 64-bit Windows operating system. We will also be using the VS Code text editor.
+In this module, we will be using the 4th (latest version at the time of the course release) version of the Azure Functions Core Tools package. We will also be using the VS Code text editor.
 
-Unfortunately, at the time of creating this course (and we believe this is the main drawback of this framework), the Serverless framework does not support Node.js versions higher than 14. Therefore, for the purpose of testing this functionality, we suggest that you will downgrade your Node.js version to 14, if your version is higher, using the version manager nvm.
+Unfortunately, at the time of creating this course (and we believe this is the main drawback of this framework), the Serverless framework does not support Node.js versions higher than 14.
+Therefore, for the purpose of testing this functionality, we suggest that you will downgrade your Node.js version to 14, if your version is higher, using the version manager nvm.
 
-Also, similarly to the previous section, we will continue to use TypeScript as the main programming language for working with this framework. 
-
-
+Also, similarly to the previous section, we will continue to use TypeScript as the main programming language for working with this framework.
 
 ## Process
 1. Let's start with installing the Serverless framework itself. This can be done by using the command `npm install -g serverless`, which will automatically install the latest version of Serverless globally on your computer.

@@ -1,6 +1,14 @@
-# Introdusing to Azure Functions
+---
+sidebar_position: 2
+---
 
-If you are a backend or full-stack web developer, most likely, creating any new software product for you starts with creating a web server that will track certain events and respond to them accordingly. This is a traditional approach for managing server-side logic: to use a dedicated server that runs continuously and handles all incoming requests. This server can be hosted on-premises or in the cloud, and can be managed by the application developer or a third-party service provider. And although such an approach has its quite strong advantages, such as full control over hardware resources, data security of the company, and independence from internet connection, more and more companies (40% according to O'Reilly survey in 2020) prefer serverless technologies in their activities. Azure is one of the largest and fastest-growing players in this market. So what are Azure Functions and what are their advantages over traditional server-based development? According to official documentation:
+# Introduction to Azure Functions
+
+If you are a backend or full-stack web developer, most likely, creating any new software product for you starts with creating a web server that will track certain events and respond to them accordingly.
+This is a traditional approach for managing server-side logic: to use a dedicated server that runs continuously and handles all incoming requests.
+This server can be hosted on-premises or in the cloud, and can be managed by the application developer or a third-party service provider.
+And although such an approach has its quite strong advantages, such as full control over hardware resources, data security of the company, and independence from internet connection, more and more companies (40% according to O'Reilly survey in 2020) prefer serverless technologies in their activities.
+Azure is one of the largest and fastest-growing players in this market. So what are Azure Functions and what are their advantages over traditional server-based development? According to official documentation:
 > *Azure Functions is a serverless solution that allows you to write less code, maintain less infrastructure, and save on costs. Instead of worrying about deploying and maintaining servers, the cloud infrastructure provides all the up-to-date resources needed to keep your applications running.*
 
 Let's unpack this definition and try to decode what it's talking about:

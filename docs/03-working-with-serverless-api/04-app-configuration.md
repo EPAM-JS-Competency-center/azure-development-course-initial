@@ -1,3 +1,7 @@
+---
+sidebar_position: 4
+---
+
 # Working with App configuration
 
 ## What is app configuration service and why do we need it in our application
@@ -44,7 +48,7 @@ Let's start with adding app configuration connection string to the Application s
 5. Click on "OK" to save the setting.
 
 If you are using the Serverless framework in your application, there is a way to achieve the same result in a much more convenient way. Of course, we are talking about storing configuration string in the `serverless.yml` file. You can do this by storing variable in the `environment` section. Pay attention to the code snippets below:
-```
+```yaml
 service: my-service
 provider:
   name: azure
@@ -61,17 +65,17 @@ After deploying application to Azure portal AZURE_APP_CONFIG_CONNECTION_STRING w
 Now all we have to do is to use the connection string to connect to the App Configuration and get the variables that are stored there. To do this, we need to make some changes to the code of our target Azure function:
 
 1. Import AppConfigurationClient:
-    ```
+    ```ts
     import { AppConfigurationClient } from '@azure/app-configuration';
     ```
 2. Create an instance of AppConfigurationClient using the connection_string:
-    ```
+    ```ts
     const connection_string = process.env.AZURE_APP_CONFIG_CONNECTION_STRING;
     import { AppConfigurationClient } from '@azure/app-configuration';
     const client = new AppConfigurationClient(connection_string);
     ```
 3. Use the client method .getConfigurationSetting to get the required variable by it's key:
-    ```
+    ```ts
     const configs = await client.getConfigurationSetting({ key: 'DATA_FROM_APP_CONFIG' });
     ```
 ---

@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # Storage Account API
 
 | Type            | Details                                                                                                                                                                                                      |
@@ -35,42 +39,43 @@ az storage account list [--resource-group]
 
 ## Storage Account Queue CLI Examples
 Create:
-<pre>
+```shell
 az storage queue create --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--fail-on-exist]
                         [--metadata]
                         [--queue-endpoint]
                         [--sas-token]
                         [--timeout]
-</pre>
+```
 Remove:
-<pre>
+
+```shell
 az storage queue delete --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--fail-not-exist]
                         [--queue-endpoint]
                         [--sas-token]
                         [--timeout]
-</pre>
+```
 
 Check:
-<pre>
+```shell
 az storage queue exists --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--queue-endpoint]
                         [--sas-token]
                         [--timeout]
-</pre>
+```
 
 ## Storage Account Table API
 
@@ -89,7 +94,7 @@ Create:
 az storage table create --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--fail-on-exist]
                         [--sas-token]
@@ -100,7 +105,7 @@ Remove:
 az storage table delete --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--fail-not-exist]
                         [--sas-token]
@@ -112,7 +117,7 @@ Check:
 az storage table exists --name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--sas-token]
                         [--table-endpoint]
@@ -134,9 +139,9 @@ az storage entity insert --entity
                          --table-name
                          [--account-key]
                          [--account-name]
-                         [--auth-mode {key, login}]
+                         [--auth-mode]
                          [--connection-string]
-                         [--if-exists {fail, merge, replace}]
+                         [--if-exists]
                          [--sas-token]
                          [--table-endpoint]
 </pre>
@@ -147,7 +152,7 @@ az storage entity delete --partition-key
                          --table-name
                          [--account-key]
                          [--account-name]
-                         [--auth-mode {key, login}]
+                         [--auth-mode]
                          [--connection-string]
                          [--if-match]
                          [--sas-token]
@@ -159,7 +164,7 @@ Query:
 az storage entity query --table-name
                         [--account-key]
                         [--account-name]
-                        [--auth-mode {key, login}]
+                        [--auth-mode]
                         [--connection-string]
                         [--filter]
                         [--marker]
@@ -231,7 +236,7 @@ az storage share delete --name
                         [--account-key]
                         [--account-name]
                         [--connection-string]
-                        [--delete-snapshots {include}]
+                        [--delete-snapshots]
                         [--fail-not-exist]
                         [--file-endpoint]
                         [--sas-token]
@@ -262,7 +267,6 @@ Endpoints types:<br/>
  - DNS Prefix if used: "**z[00-99]**"
 
 Endpoint Templates: <br/>
-**Storage**: 
-https://*<storage-account>*.*\<type>*.core.windows.net <br/>
-**Storage Blob**: https://*<storage-account>*.*\<type>*.core.windows.net/*<container>*/*<blob_name>* <br/>
-**Storage with DNS**: https://*<storage-account>*.*<dns_prefix>*.*\<type>*.core.windows.net <br/>
+**Storage**: https://*{storage-account}*.*\{type}*.core.windows.net <br/>
+**Storage Blob**: https://*{storage-account}*.*\{type}*.core.windows.net/*{container}*/*{blob_name}* <br/>
+**Storage with DNS**: https://*{storage-account}*.*{dns_prefix}*.*\{type}*.core.windows.net <br/>

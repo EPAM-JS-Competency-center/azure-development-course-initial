@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Working with Azure Functions core tools
 
 Azure Functions Core Tools is a native and convenient development tool created by Microsoft Corporation for creating, testing, and editing your Azure functions on your local computer, which can then be easily deployed to the Azure cloud server.
@@ -6,7 +10,8 @@ Let's go step-by-step on what is needed to properly configure the development en
 
 ## Assumptions
 
-In this module, we will be using the 4th (latest version at the time of the course release) version of the Azure Functions Core Tools package for 64-bit Windows operating system. We will also be using the VS Code text editor. 
+In this module, we will be using the 4th (latest version at the time of the course release) version of the Azure Functions Core Tools package.
+We will also be using the VS Code text editor. 
 
 ## Process
 

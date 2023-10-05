@@ -1,3 +1,7 @@
+---
+sidebar_position: 5
+---
+
 # Connecting Function app with API management
 
 ## What is API management and why do we need it

@@ -1,3 +1,7 @@
+---
+sidebar_position: 3
+---
+
 # Create Storage Account in Portal
 
 ### Use resource creation tool form any place in portal and select type: Storage Account
@@ -37,16 +41,17 @@ Show all previously selected options and attributes
 # Create Storage Account using Terraform
 
 ### Create Resource Group
-<pre>
+
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group */
 resource "azurerm_resource_group" "rg" {
   name     = "my-ressource-group"
   location = "West Europe"
 }
-</pre>
+```
 
 ### Create Storage Account
-<pre>
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account */
 resource "azurerm_storage_account" "sa" {
   name                             = "mystorageaccount"
@@ -62,20 +67,19 @@ resource "azurerm_storage_account" "sa" {
 
   /* edge_zone = "North Europe" */
 }
-</pre>
+```
 
 ### Create Storage Account Container
-<pre>
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container */
 resource "azurerm_storage_container" "sa_container" {
   name                  = "my-container"
   storage_account_name  = azurerm_storage_account.sa.name
   container_access_type = "private"
 }
-</pre>
-
+```
 ### Create Storage Account Blob
-<pre>
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_blob */
 resource "azurerm_storage_blob" "sa_blob" {
   name                   = "my-awesome-content.zip"
@@ -85,4 +89,4 @@ resource "azurerm_storage_blob" "sa_blob" {
   source                 = "myfile.csv"
   access_tier            = "Cool"
 }
-</pre>
+```

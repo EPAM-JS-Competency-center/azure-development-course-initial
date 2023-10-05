@@ -1,3 +1,7 @@
+---
+sidebar_position: 6
+---
+
 # Configuring and using logs in Azure cloud
 
 ## Importance of logging and monitoring in cloud applications

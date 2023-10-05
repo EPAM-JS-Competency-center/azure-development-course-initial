@@ -1,4 +1,8 @@
-# Introdusing to module
+---
+sidebar_position: 1
+---
+
+# Intro to module
 
 ## Goal
 
@@ -21,12 +25,6 @@ The following topics will be covered in this section:
 - **Other important features:** We will cover other important features of Azure Function App, such as policies, cache, monitoring, etc.
 
 ## Materials
-
-### Video
-
-#### Must watch
-
-#### Additional
 
 ### Reading
 

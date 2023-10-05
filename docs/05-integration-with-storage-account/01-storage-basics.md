@@ -1,3 +1,7 @@
+---
+sidebar_position: 1
+---
+
 # General Overview
 
 An Azure storage account contains all of your Azure Storage data objects, including blobs, file shares, queues, tables, and disks. 
