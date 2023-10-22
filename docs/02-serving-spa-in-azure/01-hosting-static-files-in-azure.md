@@ -12,6 +12,7 @@ But we will use Terraform in this course so let's create the storage account usi
 
 :::info
 Storage accounts in Azure have a very specific naming requirements, read more at https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview#storage-account-name
+Moreover the storage account must be unique!
 :::
 
 ```terraform
@@ -30,6 +31,8 @@ resource "azurerm_storage_account" "front_end_storage_account" {
 }
 ```
 
+Then don't forget to run `terraform apply`!
+
 Now you should be able to see the storage account created in Azure!
 
 ![img.png](assets/storage-account.png)
@@ -44,8 +47,8 @@ Example of the CLI.
 az storage blob upload-batch -s './dist' -d '$web' --account-name 'stgsandfrontendne001'
 ```
 
-Now if you go the primary endpoint of your storage account you should see the SPA up and running!
+Now if you go to the primary endpoint of your storage account you should see the SPA up and running!
 
 ![img.png](assets/SPA-deployed.png)
 
-Congrats!
+**Congrats!**
