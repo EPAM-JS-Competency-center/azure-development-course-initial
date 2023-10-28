@@ -6,7 +6,7 @@ sidebar_position: 1
 
 ## Goal
 
-The goal of this section is to give you a solid knowleges about Serverless architecture and how to develop and manage a Serverless API using Microsoft Azure Function App and App Config. Specifically, we will:
+The goal of this section is to give you a solid knowleges about Serverless architecture and how to develop and manage a Serverless API using Microsoft Azure Function App, App Config and Azure APIM. Specifically, we will:
 
 - Understand the general concept of Serverless and its benefits
 - Explore Azure Function App and its features, using function-core-tools and Serverless framework
