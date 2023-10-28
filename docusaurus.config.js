@@ -76,12 +76,17 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Course content',
+            title: 'Docs',
             items: [
               {
-                label: 'Intro',
+                label: 'Tutorial',
                 to: '/docs/intro',
               },
+            ],
+          },
+          {
+            title: 'Community',
+            items: [
             ],
           },
           {
