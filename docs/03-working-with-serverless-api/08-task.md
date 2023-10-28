@@ -2,11 +2,17 @@
 sidebar_position: 8
 ---
 
-# HomeWork 3
+# Task
 
 This tasks focuses on using Serverless API to create and modify Azure functions.
 
 INSERT IMAGE HERE.
+
+### 
+
+- Add an optional task to implement slots and deployment with slots
+- Add an optional task to implement a policy for caching with APIM
+- Add an optional task to create and use App Config service.
 
 ## Assumptions
 - You have Azure account with active trial period activated.

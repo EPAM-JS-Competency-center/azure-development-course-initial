@@ -4,9 +4,15 @@ sidebar_position: 1
 
 # Hosting Static Files in Azure
 
+## Summary
+
 Azure provides Storage Account service to store and host static files. We will utilise [Static Website Hosting](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website) feature.
 
 That's a super easy with Storage Account, you can follow their [step-by-step guide](https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blob-static-website-how-to?tabs=azure-portal) to create the Account using the UI.
+
+To reduce the latency for your users you can integrate Storage Account with Azure CDN. Though because the Azure CDN is not part of the Azure Free Tier offering, we won't do that. You can read more on how to do that in the reading materials.
+
+## Hosting your first site on Azure
 
 But we will use Terraform in this course so let's create the storage account using terraform. We will use [`azurerm_storage_account`](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account) resource.
 
