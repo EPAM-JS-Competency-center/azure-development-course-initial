@@ -92,6 +92,18 @@ In example above, we were using `.getConfigurationSetting` method for retrieving
 
 In this section, we just took a quick look at App Configuration, what it is for, and what benefits we can get from using it. There are many other features that you can learn about if you are interested, such as hierarchical configuration, feature flags, versioning and history, security and access control, and more.
 
+### Examples of Terraform
+
+```terraform
+resource "azurerm_app_configuration" "products_config" {
+  location            = "northeurope"
+  name                = "appconfig-products-service-sand-ne-001"
+  resource_group_name = azurerm_resource_group.product_service_rg.name
+  
+  sku = "free"
+}
+```
+
 #### Useful meterials:
  - [Azure documentation for Azure App Configuration quick start ](https://learn.microsoft.com/en-us/azure/azure-app-configuration/quickstart-javascript)
  - [Terraform documentation for setting app configuration](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/app_configuration.html)

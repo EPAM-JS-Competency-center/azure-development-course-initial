@@ -6,9 +6,11 @@ sidebar_position: 6
 
 ## What is API management and why do we need it
 
-In this part of module, we will consider another important Azure service - API Management. After we have created, deployed, and configured our application, the last step remaining is to create a minimal interface to make our application's functionality available for interaction with other applications or services. This is where API Management comes in - it serves this and many other purposes.
+In this part of module, we will review important Azure service - API Management.
 
-API management is a tool that helps to manage and control our APIs more effectively. APIs (Application Programming Interfaces) are like facade to the backend services that allow different software applications to interact and share data with each other.
+API management is a tool that helps to manage and control our APIs more effectively.
+APIs (Application Programming Interfaces) are like facade to the backend services that
+allow different software applications to interact and share data with each other.
 
 API management provides a centralized platform for managing APIs, which allows organizations to:
 
@@ -20,7 +22,7 @@ API management provides a centralized platform for managing APIs, which allows o
 
 Overall, API management helps organizations to streamline their API development and management processes, improve security and compliance, and deliver better experiences to end-users.
 
-The goals of this module is to learn how to:
+The goals of this section is to learn how to:
 1. _Create an instance of API Management_
 2. _Connect our Azure application to API Management_
 3. _Create an API that can be used to call the functionality of our application from outside_
@@ -39,7 +41,7 @@ Most likely, it was created during the deployment of your Azure application to y
 - _Resource name_ - A unique name for your API Management service.
 - _Organization name_ - The name of your organization. This name is used in many places, including the title of the developer portal and sender of notification emails.
 - _Administrator email_ - The email address to which all the notifications from API Management will be sent.
-- _Pricing tier_ - For the purpose of this course, select **Developer** tier.
+- _Pricing tier_ - For the purpose of this course, select **Consumption** tier since it is part of Free tier.
 3. When all the fields is filled, select `Review + create` button. It may take from 30 to 40 minutes to create and activate an API Management service.
 
 In order to see the list of available API Management services just start inserting the name of the service in the Azure portal search panel:
@@ -71,3 +73,80 @@ In general, that's it - we've attached our Function app to API Management and cr
 4. The final step is to insert the url address and header into Postman or any other API requests service and run the request. Good luck!
 
 In this module, we only covered the most basic functionality of the API Management service to help you understand why it is so essential for working with a Function app.
+
+## Deployment Considerations for API Management
+
+APIM should be treated as a shared resource since one APIM instance can be used to expose multiple APIs.
+
+Besides of that, you can also route the traffic to the third parties through the APIM, in that way
+you can achieve great level of observability over performances of third party APIs. e.g. you need to
+call a CMS API, you can create an API that has points to the API host.
+
+### Terraform Examples
+
+#### Creating API Management
+```terraform
+resource "azurerm_api_management" "core_apim" {
+  location        = "northeurope"
+  name            = "apim-sand-ne-001"
+  publisher_email = "nazarii_romankiv@epam.com"
+  publisher_name  = "Nazarii Romankiv"
+
+  resource_group_name = azurerm_resource_group.apim.name
+  sku_name            = "Consumption_0"
+}
+```
+
+#### Creating API
+```terraform
+resource "azurerm_api_management_api" "products_api" {
+  api_management_name = azurerm_api_management.core_apim.name
+  name                = "products-service-api"
+  resource_group_name = azurerm_resource_group.apim.name
+  revision            = "1"
+
+  display_name = "Products Service API"
+
+  protocols = ["https"]
+}
+```
+
+#### Creating Backend
+```terraform
+data "azurerm_function_app_host_keys" "products_keys" {
+  name = azurerm_windows_function_app.products_service.name
+  resource_group_name = azurerm_resource_group.product_service_rg.name
+}
+
+resource "azurerm_api_management_backend" "products_fa" {
+  name = "products-service-backend"
+  resource_group_name = azurerm_resource_group.apim.name
+  api_management_name = azurerm_api_management.core_apim.name
+  protocol = "http"
+  url = "https://${azurerm_windows_function_app.products_service.name}.azurewebsites.net/api"
+  description = "Products API"
+
+  credentials {
+    certificate = []
+    query = {}
+
+    header = {
+      "x-functions-key" = data.azurerm_function_app_host_keys.products_keys.default_function_key
+    }
+  }
+}
+```
+
+#### Creating API Operation
+
+```terraform
+resource "azurerm_api_management_api_operation" "get_products" {
+  api_management_name = azurerm_api_management.core_apim.name
+  api_name            = azurerm_api_management_api.products_api.name
+  display_name        = "Get Products"
+  method              = "GET"
+  operation_id        = "get-products"
+  resource_group_name = azurerm_resource_group.apim.name
+  url_template        = "/products"
+}
+```

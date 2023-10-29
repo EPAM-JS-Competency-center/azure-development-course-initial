@@ -18,8 +18,8 @@ We will show here how to access DB using connection string as it is the easies w
 
 1. You will need `@azure/cosmos` NPM package;
 2. Then we will need a code snipped that creates a new record in the DB;
-```js
-const { CosmosClient } = require("@azure/cosmos");
+```ts
+import { CosmosClient } from "@azure/cosmos";
 
 const key = process.env.COSMOS_KEY;
 const endpoint = process.env.COSMOS_ENDPOINT;

@@ -114,7 +114,8 @@ resource "azurerm_application_insights" "products_service_fa" {
   resource_group_name = azurerm_resource_group.product_service_rg.name
 }
 
-resource "azurerm_linux_function_app" "products_service" {
+
+resource "azurerm_windows_function_app" "products_service" {
   name     = "fa-products-service-ne-001"
   location = "northeurope"
 
@@ -140,11 +141,13 @@ resource "azurerm_linux_function_app" "products_service" {
     cors {
       allowed_origins = ["https://portal.azure.com"]
     }
+
+    application_stack {
+      node_version = "~16"
+    }
   }
 
   app_settings = {
-    FUNCTIONS_WORKER_RUNTIME                 = "node"
-    WEBSITE_NODE_DEFAULT_VERSION             = "~18"
     WEBSITE_CONTENTAZUREFILECONNECTIONSTRING = azurerm_storage_account.products_service_fa.primary_connection_string
     WEBSITE_CONTENTSHARE                     = azurerm_storage_share.products_service_fa.name
   }
@@ -152,7 +155,12 @@ resource "azurerm_linux_function_app" "products_service" {
   # The app settings changes cause downtime on the Function App. e.g. with Azure Function App Slots
   # Therefore it is better to ignore those changes and manage app settings separately off the Terraform.
   lifecycle {
-    ignore_changes = [app_settings, tags["hidden-link: /app-insights-instrumentation-key"], tags["hidden-link: /app-insights-resource-id"]]
+    ignore_changes = [
+      app_settings,
+      tags["hidden-link: /app-insights-instrumentation-key"],
+      tags["hidden-link: /app-insights-resource-id"],
+      tags["hidden-link: /app-insights-conn-string"]
+    ]
   }
 }
 ```

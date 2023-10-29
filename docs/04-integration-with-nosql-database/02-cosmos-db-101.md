@@ -35,4 +35,3 @@ In this course we will use native Cosmos DB NoSQL API, therefore we recommend yo
 - [Model document data](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/modeling-data)
 - [Modeling and partitioning - real-world example](https://learn.microsoft.com/en-us/azure/cosmos-db/nosql/model-partition-example)
 
-I hope you are eager to get your hands dirty with the Cosmos DB, so let's cut to the chase!
