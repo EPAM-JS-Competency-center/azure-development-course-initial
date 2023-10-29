@@ -32,16 +32,16 @@ Show all previously selected options and attributes
 # Create Service Bus using Terraform
 
 ### Create Resource Group
-<pre>
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group */
 resource "azurerm_resource_group" "rg" {
   name     = "my-ressource-group"
   location = "West Europe"
 }
-</pre>
+```
 
 ### Create Service Bus Namespace
-<pre>
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_namespace.html */
 resource "azurerm_servicebus_namespace" "sb" {
   name                          = "my-new-servicebus"
@@ -53,10 +53,11 @@ resource "azurerm_servicebus_namespace" "sb" {
   minimum_tls_version           = "1.2"
   zone_redundant                = false /* can be changed to true for premium */
 }
-</pre>
+```
 
 ### Create Service Bus Queue
-<pre>
+
+```terraform
 /* Docs: https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/servicebus_queue */
 resource "azurerm_servicebus_queue" "example" {
   name                                    = "my_new_servicebus_queue"
@@ -72,4 +73,4 @@ resource "azurerm_servicebus_queue" "example" {
   requires_session                        = false
   dead_lettering_on_message_expiration    = false
 }
-</pre>
+```

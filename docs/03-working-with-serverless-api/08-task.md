@@ -13,6 +13,7 @@ INSERT IMAGE HERE.
 - Add an optional task to implement slots and deployment with slots
 - Add an optional task to implement a policy for caching with APIM
 - Add an optional task to create and use App Config service.
+- The task should be to implement the APIM integration and then use it.
 
 ## Assumptions
 - You have Azure account with active trial period activated.
