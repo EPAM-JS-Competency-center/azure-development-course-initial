@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # General Overview
 
 Azure Service Bus (SB) is a managed enterprise message broker. 
@@ -144,7 +148,7 @@ For more details on specific role requirements, please refer to the trigger and 
 2. In app, select Configuration under Settings.
 3. In Application settings, select + New application setting to create the new setting:
 <br/>Name: ServiceBusConnection__fullyQualifiedNamespace
-<br/>Value: {SERVICE_BUS_NAMESPACE}.servicebus.windows.net
+<br/>Value: SERVICE_BUS_NAMESPACE.servicebus.windows.net
 4. After you create the two settings, select Save > Confirm.
 
 When using Azure App Configuration or Key Vault to provide settings for Managed Identity connections, setting names should use a valid key separator such as : or / in place of the __ to ensure names are resolved correctly.

@@ -5,10 +5,6 @@ sidebar_position: 8
 # Task
 ------
 
-This task focuses on integration of Function App with Cosmos DB.
-
-![img.png](assets/HW_focus.png)
-
 ## Task 4.1
 
 Use Terraform to create a CosmosDB database and create two collections inside DB.
@@ -40,10 +36,8 @@ You can use `faker` NPM package to help you generate random data.
 
 ## Task 4.2
 
-TODO: update the requirements here
-1. Add CosmosDB and collections to your Terraform definition. 
-2. Integrate the `getProductList` Azure Function to return list of products from the database via `GET /products`. It should return both products and stocks for them. Use HTTP Trigger for that.
-3. Implement a Product model on FE side as joined model of product and stock by productId. For example
+1. Integrate the `http-get-products-list` Azure Function to return list of products from the database via `GET /products`. It should return both products and stocks for them.
+2. Implement a Product model on FE side as joined model of product and stock by productId. For example
 
 FE: One product model
 ```js
@@ -55,13 +49,14 @@ FE: One product model
     description: ‘This product ...’
   }
 ```
-4. Integrate the `getProductsById` Azure Function to return via `GET /products/{productId}` a single product from the database. 
+4. Integrate the `http-get-product-by-id` Azure Function to return via `GET /products/{productId}` a single product from the database. 
 
 ## Task 4.3
 
-1. Create an Azure function called `createProduct` will be triggered by the HTTP POST method.
+1. Create an Azure function called `http-post-product` will be triggered by the HTTP POST method.
 2. The requested URL should be `/products`.
 3. Implement its logic so it will be creating a new item in a Products container.
+4. Integrate the endpoint on the Front-end application
 
 ## Task 4.4
 

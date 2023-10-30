@@ -1,4 +1,10 @@
-# Azure Service Bus Suggested Reading List
+---
+sidebar_position: 6
+---
+
+# Reading list
+
+## Must Have
 
 1. General information: https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
 2. Queues and Topics: https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-queues-topics-subscriptions
