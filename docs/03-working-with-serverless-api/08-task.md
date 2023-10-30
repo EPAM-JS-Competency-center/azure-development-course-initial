@@ -2,7 +2,9 @@
 sidebar_position: 8
 ---
 
-# Task
+# Tasks
+
+---
 
 This tasks focuses on using Serverless API to create and modify Azure functions.
 

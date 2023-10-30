@@ -2,8 +2,10 @@
 sidebar_position: 8
 ---
 
-# Task
-------
+
+# Tasks
+
+---
 
 ## Task 4.1
 
@@ -66,11 +68,11 @@ FE: One product model
 
 # Evaluation Criteria (70 points for covering all criteria)
 ------
-Reviewers should verify the lambda functions by invoking them through provided URLs.
+Reviewers should verify the functions by invoking them through provided URLs.
 
 - Task 4.1 is implemented
-- Task 4.2 is implemented lambda links are provided and returns data
-- Task 4.3 is implemented lambda links are provided and products is stored in DB (call Task 4.2 to see the product)
+- Task 4.2 is implemented functions links are provided and returns data
+- Task 4.3 is implemented functions links are provided and products is stored in DB (call Task 4.2 to see the product)
 - Your own Frontend application is integrated with Product Service (/products API) and products from Product Service are represented on Frontend. Link to a working Frontend application is provided for cross-check reviewer.
 
 ## Optional Tasks

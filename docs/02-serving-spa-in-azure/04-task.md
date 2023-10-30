@@ -2,7 +2,9 @@
 sidebar_position: 3
 ---
 
-# Task
+# Tasks
+
+---
 
 # Task 2.1 Automated Deployment
 
