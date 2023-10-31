@@ -1,6 +1,9 @@
 name: Publish Coursebook
 run-name: ${{ github.actor }} Publishing the Course Book 🚀
-on: [push]
+
+on: [workflow_dispatch]
+
+
 jobs:
   Publish-Courseboook:
     runs-on: ubuntu-latest
