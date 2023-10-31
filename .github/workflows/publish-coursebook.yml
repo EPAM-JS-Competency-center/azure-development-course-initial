@@ -1,0 +1,33 @@
+name: Publish Coursebook
+run-name: ${{ github.actor }} Publishing the Course Book 🚀
+on: [push]
+jobs:
+  Publish-Courseboook:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_ACCESS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ vars.AWS_DEFAULT_REGION }}
+      S3_BUCKET: ${{ vars.S3_BUCKET }}
+      PROGRAM_PATH: ${{ vars.PROGRAM_PATH }}
+      DISTRIBUTION_ID: ${{ vars.DISTRIBUTION_ID }}
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: "Install Dependencies"
+        run: npm install
+
+      - name: "Build coursebook"
+        run: npm run build
+
+      - name: "Upload coursebook"
+        run: aws s3 sync build/ s3://$S3_BUCKET/$PROGRAM_PATH/
+
+      - name: "Invalidate Cache"
+        run: aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /$PROGRAM_PATH/*
