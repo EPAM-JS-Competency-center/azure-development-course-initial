@@ -9,7 +9,7 @@ jobs:
       AWS_ACCESS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_ACCESS_KEY }}
       AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
       S3_BUCKET: ${{ secrets.S3_BUCKET }}
-      PROGRAM_PATH: ${{ secrets.PROGRAM_PATH }}
+      PROGRAM_PATH: ${{ vars.PROGRAM_PATH }}
       DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
 
     steps:
