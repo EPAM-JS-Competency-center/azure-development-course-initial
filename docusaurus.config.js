@@ -14,7 +14,7 @@ const config = {
   url: 'https://your-docusaurus-test-site.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/azure-cloud-practitioner/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -64,6 +64,11 @@ const config = {
             docId: 'intro',
             position: 'left',
             label: 'Azure Cloud Practitioner',
+          },
+          {
+            href: 'https://d17btkcdsmqrmh.cloudfront.net',
+            label: 'Back to Interactive Learning',
+            position: 'left'
           },
           {
             href: 'https://github.com/EPAM-JS-Competency-center/azure-development-course-initial',

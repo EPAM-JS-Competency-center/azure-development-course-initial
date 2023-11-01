@@ -25,6 +25,9 @@
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.3.1"
   },
+  "optionalDependencies": {
+    "@ebook/access-epm-wrapper": "^0.0.4"
+  },
   "browserslist": {
     "production": [
       ">0.5%",
