@@ -15,6 +15,7 @@ jobs:
       S3_BUCKET: ${{ secrets.S3_BUCKET }}
       PROGRAM_PATH: ${{ vars.PROGRAM_PATH }}
       DISTRIBUTION_ID: ${{ secrets.DISTRIBUTION_ID }}
+      DOMAIN_OWNER: ${{ secrets.DOMAIN_OWNER }}
 
     steps:
       - name: Check out repository code
@@ -23,6 +24,9 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+
+      - name: "Login into CodeArtifact"
+        run: aws codeartifact login --tool npm --domain ebook --domain-owner $DOMAIN_OWNER --repository ebook-management --region eu-central-1
 
       - name: "Install Dependencies"
         run: npm install
