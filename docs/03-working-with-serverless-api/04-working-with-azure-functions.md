@@ -211,3 +211,17 @@ functions entry points in the root of your projects, but  besides of that it doe
 You could use Nest.js with an adapter to be hosted on Azure Functions, but we do not recommend since it only  supports HTTP functions, while Azure Functions has way more ways of integrations.
 
 We recommend to utilise a minimalistic set-up with DI container, for more read in [How to use Dependency Injection in Azure Functions with Node.js](https://levelup.gitconnected.com/how-to-use-dependency-injection-in-azure-functions-with-node-js-e6a5f642ace2)
+
+## Deployment Considerations 
+
+- Each FA requires a Storage Account with a file-share, since storage accounts are cheap it is better to create Storage Account per FA to achieve higher levels of isolation.
+- Use 64x Windows machines, since they have better support and more instances per App Service Plan on Premium instances, though come at higher price.
+- For Production workloads use Premium instances. 
+- Different functions can affect each other because they share physical hosts and runtime.
+  Therefore, it is better to split the function app into two, one for running Async jobs e.g.
+  long-running CRON jobs and service bus trigger functions, and a separate one to run HTTP triggered functions.
+  This will enable you to achieve better isolation, and maintainability.
+- Azure App Service Plans are meant to be shared. It is better to provision one big plan e.g.
+  EP2 or EP3 and plant more different functions apps on it than provision a dozen of EP1 plans.
+  Cost-efficiency and performance wise. THOUGH if you know one FA will eat up a lot of resources 
+  consider moving it into separate App Service Plan.

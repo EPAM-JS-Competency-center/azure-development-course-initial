@@ -24,7 +24,7 @@ If you do not want to use APIM you can access the Function APIs with API Key Aut
 read [here](https://learn.microsoft.com/en-us/azure/azure-functions/functions-bindings-http-webhook-trigger?tabs=python-v2%2Cisolated-process%2Cnodejs-v4%2Cfunctionsv2&pivots=programming-language-typescript#api-key-authorization);
 :::
 
-1. Create an httpTriggered azure function called `http-get-product-lits`, path `/products`. This function should "return" the array of product objects in a form:
+1. Create an httpTriggered azure function called `http-get-product-list`, path `/products`. This function should "return" the array of product objects in a form:
 ```typescript
 type Product = {
     id: string;
@@ -49,7 +49,7 @@ At the moment, data array could be just mocked - hardcoded in the function body 
 2. Create a pull request to the `master` branch.
 3. Submit the link to the pull request for crosscheck.
 
-# Evaluation Criteria
+# Evaluation Criteria (70 points for all criteria)
 
 Reviewers should verify the azure functions by invoking them through provided URLs.
 - Verify that get products list returns full list of products;
@@ -58,9 +58,9 @@ Reviewers should verify the azure functions by invoking them through provided UR
 
 # Optional Tasks
 
-- **+5** - Implement slots and deployment with slots (use azure CLI)
+- **+10** - Implement slots and deployment with slots (use azure CLI)
 - **+10** - Implement integration with APIM and then implement a policy for caching with APIM
-- **+5** - Create and use App Config Service.
+- **+10** - Create and use App Config Service. **Use free tier App Config to avoid extra charges**
 
 # Description Template for PRs
 ---

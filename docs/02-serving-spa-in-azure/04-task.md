@@ -6,7 +6,7 @@ sidebar_position: 3
 
 ---
 
-# Task 2.1 Automated Deployment
+## Task 2.1 Automated Deployment
 
 1. Configure the Terraform to provision the storage account for your needs;
 2. Implement and NPM script in package.json that will upload the built application to the storage account;
@@ -14,8 +14,7 @@ sidebar_position: 3
 4. Create a pull request to the `master` branch;
 5. Submit the link to the pull request for crosscheck;
 
-# Evaluation criteria (70 points for all criteria)
+## Evaluation criteria (100 points for all criteria)
 
 - The storage account have been created, and the application have been deployed to it. The application is available on the internet.
 - The NPM script to deploy the app is implemented.
-

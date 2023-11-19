@@ -14,12 +14,12 @@ functions configuration.
 
 ## Task 5.2
 
-1. Create a function `http-get-import-products-files` with URL `/import`
+1. Create a function `http-get-import-products-files` with URL `/import`, that accepts query parameter `name` for the file name.
 2. The function should return a `SAS` token that allows the FE to upload the file to the storage account.
 
 ## Task 5.3
 
-1. Create a function `blob-import-products-from-file` which fill be triggered by Storage Account.
+1. Create a function `blob-import-products-from-file` which will be triggered by Storage Account.
 2. Configure the Function to trigger only to files uploaded to `uploaded` container in the Storage Account.
 3. Implement the business logic that will read the file and parse the CSV file and log each record.
 
@@ -40,8 +40,8 @@ Reviewers should verify the functions by invoking them through provided URLs.
 
 ## Optional Tasks
 
-- **+10** - The functions are covered with unit tests
-- **+10** - At the end of the parsing the file the `blob-import-products-from-file` function should move the file to `parsed` folder.
+- **+15** - The functions are covered with unit tests
+- **+15** - At the end of the parsing the file the `blob-import-products-from-file` function should move the file to `parsed` folder.
   (mve the file means that file should be copied into a container `parsed`, and then deleted from `uploaded` container)
 
 

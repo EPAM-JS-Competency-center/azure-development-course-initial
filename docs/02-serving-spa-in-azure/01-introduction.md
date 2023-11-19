@@ -7,4 +7,4 @@ sidebar_position: 1
 ## Goals
 
 - Learn what a Storage Account is
-- Learn how to host static account in Azure!
+- Learn how to host static assets in Azure!

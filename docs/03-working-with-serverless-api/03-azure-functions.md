@@ -24,15 +24,4 @@ Although running Windows machines is more expensive, we recommend to run Windows
 ## Event Driven Architecture
 
 Azure Functions as any other Function as a Service solution built as Event Driven service.
-The Azure Functions are configured with triggers and bindings to react to different events e.g. a event from queue or HTTP call. 
-
-## Azure Functions On Premium Plan Tips
-
-If you need to run Azure Functions on Premium Plans, you should know the following:
-- Different functions cap affect each other because they share physical hosts and runtime. 
-Therefore, it is better to split the function app into two, one for running Async jobs e.g. 
-long-running CRON jobs and service bus trigger functions, and a separate one to run HTTP triggered functions. 
-This will enable you to achieve better isolation, and maintainability.
-- Azure Service Plans are meant to be shared. It is better to provision one big plan e.g.
-EP2 or EP3 and plant more different functions apps on it than provision a dozen of EP1 plans.
-Cost-efficiency and performance wise.
+The Azure Functions are configured with [triggers](https://learn.microsoft.com/en-us/azure/azure-functions/functions-triggers-bindings?tabs=isolated-process%2Cpython-v2&pivots=programming-language-typescript) and bindings to react to different events e.g. a event from queue or HTTP call. 

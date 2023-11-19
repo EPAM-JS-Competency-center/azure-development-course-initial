@@ -6,8 +6,10 @@ sidebar_position: 1
 
 :::info
 Be aware that one day you may receive an email with a request to upgrade your plan, as long as you are using
-services that have a [free tier for 12 months ](https://azure.microsoft.com/en-us/free/#12-months-free)you can safely use the Azure subscription without charges. The program
-is using only such services. You can then track your free services usage at the subscription page.
+services that have a [free tier for 12 months ](https://azure.microsoft.com/en-us/free/#12-months-free)you can safely use the Azure subscription without charges.
+Though the program is using only such services, it is better to destroy your resources when you don't need them,
+because Azure has very inconvenient free tier, e.g. a service bus is free only for 750 hours of usage, a year.
+You can then track your free services usage at the subscription page.
 :::
 
 1. First go to [Azure Portal](https://azure.microsoft.com/en-us/) and hit the sign in button in the top right corner.

@@ -77,10 +77,10 @@ Reviewers should verify the functions by invoking them through provided URLs.
 
 ## Optional Tasks
 
-- **+6** - `POST /products` function returns 400 status code if product data is invalid;
-- **+6** - All functions use `context.log` to log information about incoming requests;
-- **+6** - An application is using managed identity to connect to the Cosmos DB;
-- **+6** - Implement `GET /products/total` that returns an aggregation of total products available.
+- **+5** - `POST /products` function returns 400 status code if product data is invalid;
+- **+5** - All functions use `context.log` to log information about incoming requests;
+- **+10** - An application is using managed identity to connect to the Cosmos DB;
+- **+10** - Implement `GET /products/total` that returns an aggregation of total products available.
 
 # Description Template for PRs
 ---
