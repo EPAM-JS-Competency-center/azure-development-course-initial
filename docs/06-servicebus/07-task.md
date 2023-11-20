@@ -2,18 +2,17 @@
 sidebar_position: 7
 ---
 
-# Prereqs
+# Task
 
 - The task is continuation of Task #5;
 - The goal is to create a service to be able to save products which were provided in csv file to the Cosmos DB.
-
 
 # Tasks
 ---
 
 ## Task 6.1
-1. Create a service-bus and create topic with a subscription. 
-2. In the products-service create a function that will be triggered by a service-bus.
+1. Create a service-bus and create a queue. 
+2. In the `products-service` create a function `service-bus-import-product` that will be triggered by a service-bus.
 3. The function should insert each product into the Cosmos DB.
 
 ## Task 6.2
@@ -21,9 +20,6 @@ sidebar_position: 7
 2. Remove the logs that included each product.
 
 ## Task 6.3
-TODO: UPD to send emails
-
-## Task 6.4
 
 1. Commit all your work to separate branch (e.g. `task-6` from the latest `master`) in BE (backend) and if needed in FE (frontend) repositories.
 2. Create a pull request to the `master` branch.
@@ -40,6 +36,7 @@ Reviewers should verify the functions by invoking them through provided URLs.
 ## Optional Tasks
 
 - **+10** - The functions are covered with unit tests
+- **+20** - Service Bus Topic with multiple subscriptions is used. A subscription has a filter by property.
 
 # Description Template for PRs
 ---

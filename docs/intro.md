@@ -35,3 +35,6 @@ Each section/module consists of:
 - Reading list. A selected list of documentation and articles that you need to read to have a better understanding on the topic.
 - Recommendations and crux. Sections that provide summaries and teach you how to assemble different pieces together and how to build systems.
 - Practical task. A practical task that you need to implement as your assignment (usually referred as home task).
+
+## Example of solution
+In case you stuck with implementation and need to look up how to do something, feel free to use [this example of solution](https://github.com/EPAM-JS-Competency-center/shop-nodejs-azure-serverless).
