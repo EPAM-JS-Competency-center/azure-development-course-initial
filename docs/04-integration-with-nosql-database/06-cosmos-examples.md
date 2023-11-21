@@ -20,6 +20,10 @@ resource "azurerm_cosmosdb_account" "test_app" {
     consistency_level = "Eventual"
   }
 
+  capabilities {
+    name = "EnableServerless"
+  }
+
   geo_location {
     failover_priority = 0
     location          = "North Europe"
@@ -55,8 +59,6 @@ resource "azurerm_cosmosdb_sql_container" "products" {
 
   # Cosmos DB supports TTL for the records
   default_ttl = -1
-
-  throughput = 400
 
   indexing_policy {
     excluded_path {
