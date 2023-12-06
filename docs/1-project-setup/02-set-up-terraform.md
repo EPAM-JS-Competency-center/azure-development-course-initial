@@ -9,6 +9,10 @@ We will be using Terraform a lot in this program to provision cloud resources, s
 1. Install the terraform following the guidelines from https://developer.hashicorp.com/terraform/tutorials/azure-get-started/install-cli
 2. Install the Azure CLI and create service principle to set-up local env following the steps in https://developer.hashicorp.com/terraform/tutorials/azure-get-started/azure-build
 
+:::danger
+DO NOT COMMIT YOUR SECRETS INTO GIT. Use env variables for local development to supply secrets.
+:::
+
 Now you are ready to create your first resource, for that let's create a resource group.
 
 ```terraform
