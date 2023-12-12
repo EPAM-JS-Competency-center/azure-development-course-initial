@@ -137,6 +137,34 @@ resource "azurerm_api_management_backend" "products_fa" {
 }
 ```
 
+### Creating API Policy
+
+```terraform
+resource "azurerm_api_management_api_policy" "api_policy" {
+  api_management_name = azurerm_api_management.core_apim.name
+  api_name            = azurerm_api_management_api.products_api.name
+  resource_group_name = azurerm_resource_group.apim.name
+
+  xml_content = <<XML
+ <policies>
+ 	<inbound>
+ 		<set-backend-service backend-id="${azurerm_api_management_backend.products_fa.name}"/>
+ 		<base/>
+ 	</inbound>
+ 	<backend>
+ 		<base/>
+ 	</backend>
+ 	<outbound>
+ 		<base/>
+ 	</outbound>
+ 	<on-error>
+ 		<base/>
+ 	</on-error>
+ </policies>
+XML
+}
+```
+
 #### Creating API Operation
 
 ```terraform
