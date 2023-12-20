@@ -59,7 +59,7 @@ Reviewers should verify the azure functions by invoking them through provided UR
 # Optional Tasks
 
 - **+10** - Implement slots and deployment with slots (use azure CLI)
-- **+10** - Implement integration with APIM and then implement a policy for caching with APIM
+- **+10** - Implement integration with APIM
 - **+10** - Create and use App Config Service. **Use free tier App Config to avoid extra charges**
 
 # Description Template for PRs
