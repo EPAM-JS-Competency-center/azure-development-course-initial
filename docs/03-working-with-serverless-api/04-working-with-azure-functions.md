@@ -134,8 +134,8 @@ resource "azurerm_windows_function_app" "products_service" {
     application_insights_key               = azurerm_application_insights.products_service_fa.instrumentation_key
     application_insights_connection_string = azurerm_application_insights.products_service_fa.connection_string
 
-    # For production systems set this to false
-    use_32_bit_worker = false
+    # For production systems set this to false, but consumption plan supports only 32bit workers
+    use_32_bit_worker = true
 
     # Enable function invocations from Azure Portal.
     cors {
