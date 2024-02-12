@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Create Service Bus in Portal
 
-### Use resource creation tool form any place in portal and select type: Storage Account
+### Use resource creation tool form any place in portal and select type: Service Bus
 ![img.png](assets/sb_create_000.png)
 ![img.png](assets/sb_create_001.png)
 
