@@ -31,7 +31,7 @@ const config = {
     defaultLocale: 'en',
     locales: ['en'],
   },
-
+  plugins: [require.resolve('docusaurus-lunr-search')],
   presets: [
     [
       'classic',
@@ -66,11 +66,6 @@ const config = {
             label: 'Azure Cloud Practitioner',
           },
           {
-            href: 'https://d17btkcdsmqrmh.cloudfront.net',
-            label: 'Back to Interactive Learning',
-            position: 'left'
-          },
-          {
             href: 'https://github.com/EPAM-JS-Competency-center/azure-development-course-initial',
             label: 'GitHub',
             position: 'right',
@@ -99,12 +94,15 @@ const config = {
             ],
           },
         ],
-        copyright: `Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} EPAM Systems. All Rights Reserved.`,
       },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      colorMode: {
+        disableSwitch: true
+      }
     }),
 };
 
