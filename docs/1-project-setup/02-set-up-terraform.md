@@ -15,11 +15,23 @@ DO NOT COMMIT YOUR SECRETS INTO GIT. Use env variables for local development to 
 
 Now you are ready to create your first resource, for that let's create a resource group.
 
-```terraform
-    resource "azurerm_resource_group" "front_end_rg" {
-        name     = "rg-frontend-sand-ne-001"
-        location = "northeurope"
+```terraform 
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~> 3.92.0"
     }
+  }
+
+  required_version = ">= 1.1.0"
+}
+
+
+resource "azurerm_resource_group" "front_end_rg" {
+  name     = "rg-frontend-sand-ne-001"
+  location = "northeurope"
+}
 ```
 
 Run `terraform apply` and confirm that you can see the group created in the Azure Portal!
