@@ -29,7 +29,7 @@
   },
   "optionalDependencies": {
     "@ebook/access-epm-wrapper": "^1.0.3",
-    "@ebook/core": "^0.0.16"
+    "@ebook/core": "^0.0.18"
   },
   "browserslist": {
     "production": [
