@@ -1,20 +1,18 @@
 import React from 'react';
-
-let LearnFooter = ({ children }) => <>{children}</>; // Default fallback component
+import Copyright from '@theme-original/Footer/Copyright';
+let Footer = ({...props}) => <Copyright {...props} />;
 
 if (process.env.NODE_ENV === 'production') {
-    // NODE_ENV is always equal to 'production' for npm run build
-    try {
-        LearnFooter = require('@ebook/core').LearnFooter;
-    } catch(e) {
-        console.error('Failed to load @ebook/access-epm-wrapper:', e);
-    }
+  // NODE_ENV is always equal to 'production' for npm run build
+  try {
+    Footer = require('@ebook/core').LearnFooter;
+  } catch(e) {
+    console.error('Failed to load @ebook/core:', e);
+  }
 }
-
-
-
 export default function CopyrightWrapper(props) {
-    return (
-        <LearnFooter {...props}/>
-    );
+
+  return (
+    <Footer {...props} />
+  );
 }
