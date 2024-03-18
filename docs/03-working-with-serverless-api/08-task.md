@@ -6,7 +6,10 @@ sidebar_position: 8
 
 ---
 
+## Focus of Task
+
 This tasks focuses on using Serverless API to create and modify Azure functions.
+![img.png](./assets/task.png)
 
 ## Prerequisites
 - **Install** the latest version of Azure Functions Core Tools (https://learn.microsoft.com/en-us/azure/azure-functions/functions-run-local).

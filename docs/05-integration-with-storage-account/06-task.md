@@ -4,6 +4,10 @@ sidebar_position: 6
 
 # Tasks
 
+## Focus of Task
+
+![img.png](./assets/task.png)
+
 ---
 
 ## Task 5.1

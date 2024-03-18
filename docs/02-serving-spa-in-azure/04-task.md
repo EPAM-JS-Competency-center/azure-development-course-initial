@@ -4,6 +4,10 @@ sidebar_position: 3
 
 # Tasks
 
+## Focus of Task
+
+![img.png](./assets/task.png)
+
 ---
 
 ## Task 2.1 Automated Deployment

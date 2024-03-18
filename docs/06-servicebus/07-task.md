@@ -2,12 +2,14 @@
 sidebar_position: 7
 ---
 
-# Task
+# Tasks
+
+## Focus of Task
+![img.png](./assets/task.png)
 
 - The task is continuation of Task #5;
 - The goal is to create a service to be able to save products which were provided in csv file to the Cosmos DB.
 
-# Tasks
 ---
 
 ## Task 6.1
