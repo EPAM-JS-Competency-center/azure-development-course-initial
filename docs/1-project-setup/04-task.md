@@ -20,3 +20,9 @@ Create an Azure account following the guidelines described in the module.
 ## Task 1.3 
 
 Set-up local terraform environment following the guidelines described in the module.
+
+## Task 1.4
+
+Set-up budget alerts in Azure, to ensure that you won't overspend your money. Follow either of those tutorials, to set-up alerts:
+- https://medium.com/@rajoliharikrishna72/how-to-create-budget-alerts-in-azure-subscription-f039250107b
+- https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets
