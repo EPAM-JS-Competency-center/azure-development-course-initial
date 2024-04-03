@@ -28,8 +28,8 @@
     "@docusaurus/module-type-aliases": "2.3.1"
   },
   "optionalDependencies": {
-    "@ebook/access-epm-wrapper": "^1.2.0",
-    "@ebook/core": "^1.2.1"
+    "@ebook/access-epm-wrapper": "^1.2.2",
+    "@ebook/core": "^1.2.2"
   },
   "browserslist": {
     "production": [
