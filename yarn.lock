@@ -1713,10 +1713,10 @@
     sass "^1.57.1"
     standard-version "^9.5.0"
 
-"@ebook/core@^1.2.0":
-  version "1.2.0"
-  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/core/-/core-1.2.0.tgz"
-  integrity sha512-U1osHEL0/i/vEaigVOlOp4EJKhAWw45K4IqcJD/RcYjxT5LbCl/ITEFAgLtJnbNnTQk1v2ngrZA6p1SIM01CEw==
+"@ebook/core@^1.2.1":
+  version "1.2.1"
+  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/core/-/core-1.2.1.tgz"
+  integrity sha512-xZU+ART6Je3Qs8GCAT29YUyEjxQZeA6O3TidDTzyNI2Q763TELvyXt1oO8u194F1udFqa79UUTuFpNQp5/Itqw==
   dependencies:
     "@ebook/access-epm-wrapper" "^1.0.3"
     docusaurus-lunr-search "^3.3.2"
