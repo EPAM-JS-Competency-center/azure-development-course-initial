@@ -1704,19 +1704,19 @@
     url-loader "^4.1.1"
     webpack "^5.73.0"
 
-"@ebook/access-epm-wrapper@^1.0.3", "@ebook/access-epm-wrapper@^1.2.0":
-  version "1.2.0"
-  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/access-epm-wrapper/-/access-epm-wrapper-1.2.0.tgz"
-  integrity sha512-POaCNytiDrJ7Gg6Kfer4+IzdRczCKUHW35yUupzNt1YPC1E1Pgb5+kaoPvfRY7B1LV34wE45ycOOXcU9LLSM+Q==
+"@ebook/access-epm-wrapper@^1.0.3", "@ebook/access-epm-wrapper@^1.2.2":
+  version "1.2.2"
+  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/access-epm-wrapper/-/access-epm-wrapper-1.2.2.tgz"
+  integrity sha512-Uw6Vi/2zGbmdm14QYcIRkrfAshBrn4Jz3/q8TVDAGIN84DlxJR4FGwJYxnl7YTlDh+6ergR7YBpvNygmM1ORJg==
   dependencies:
     dotenv "^16.0.3"
     sass "^1.57.1"
     standard-version "^9.5.0"
 
-"@ebook/core@^1.2.1":
-  version "1.2.1"
-  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/core/-/core-1.2.1.tgz"
-  integrity sha512-xZU+ART6Je3Qs8GCAT29YUyEjxQZeA6O3TidDTzyNI2Q763TELvyXt1oO8u194F1udFqa79UUTuFpNQp5/Itqw==
+"@ebook/core@^1.2.2":
+  version "1.2.2"
+  resolved "https://ebook-300006373750.d.codeartifact.eu-central-1.amazonaws.com/npm/ebook-management/@ebook/core/-/core-1.2.2.tgz"
+  integrity sha512-ZrTiZuuATXHjJF3VNvydHei2z1j7jL7LYIh8L3Q6y2+BzwRog0uo4mM9Xb2MIuJGT06FaBOTE3h41+iX68xQ+Q==
   dependencies:
     "@ebook/access-epm-wrapper" "^1.0.3"
     docusaurus-lunr-search "^3.3.2"
